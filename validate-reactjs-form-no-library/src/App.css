@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --border-color: #ccc;
+  --error-color: #ff0000;
+  --font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #333;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: 10px;
+  display: none;
+}
+
+input:invalid.input-focused {
+  border-color: var(--error-color);
+}
+
+input:invalid.input-focused ~ span {
+  display: block;
+}
+
+button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+button:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 90%;
+  }
+}
